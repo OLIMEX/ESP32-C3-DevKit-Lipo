@@ -1,0 +1,26 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,7.0.9-7.0.9~ubuntu22.04.1*%
+%TF.CreationDate,2026-01-09T16:00:10+02:00*%
+%TF.ProjectId,ESP32-C3-DevKit-Lipo_Rev_C,45535033-322d-4433-932d-4465764b6974,C*%
+%TF.SameCoordinates,PX7b89fa0PY6e37550*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 7.0.9-7.0.9~ubuntu22.04.1) date 2026-01-09 16:00:10*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.254000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X27940000Y0D02*
+X27940000Y38100000D01*
+X0Y38100000D02*
+X0Y0D01*
+X0Y0D02*
+X27940000Y0D01*
+X27940000Y38100000D02*
+X0Y38100000D01*
+M02*

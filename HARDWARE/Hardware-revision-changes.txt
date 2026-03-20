@@ -1,0 +1,15 @@
+========
+Hardware revision B
+========
+
+Initial release
+
+========
+Hardware revision C
+========
+
+1. Moved the project to KiCAD 7.
+2. Added UEXT connector.
+3. Removed ESP-PROG connector.
+4. Rotated BAT1 connector.
+5. Changed some GPIOs - battery measruement pin is now GPIO5 and external power sense is GPIO1.
