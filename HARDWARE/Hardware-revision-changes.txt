@@ -8,6 +8,8 @@ Initial release
 Hardware revision C
 ========
 
+Major changes compared to revision B:
+
 1. Moved the project to KiCAD 7.
 2. Added UEXT connector.
 3. Removed ESP-PROG connector.
