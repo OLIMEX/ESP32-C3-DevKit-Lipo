@@ -1,0 +1,119 @@
+esphome:
+  name: esp32-c3-devkit-lipo
+  comment: Olimex ESP32-C3-DevKit-LiPo (native USB, LiPo, UEXT)
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+# ================= CORE =================
+
+logger:
+  hardware_uart: USB_CDC
+
+api:
+
+ota:
+  - platform: esphome
+
+# ================= WIFI =================
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: "ESP32-C3-LiPo Fallback"
+    password: "fallback123"
+
+captive_portal:
+
+# ================= ONBOARD LED =================
+
+output:
+  - platform: gpio
+    id: led_green_out
+    pin:
+      number: GPIO8
+      mode: OUTPUT
+      inverted: false
+
+light:
+  - platform: binary
+    name: "Onboard LED"
+    output: led_green_out
+
+# ================= USER BUTTON =================
+
+binary_sensor:
+  - platform: gpio
+    name: "User Button"
+    pin:
+      number: GPIO9
+      mode: INPUT_PULLUP
+      inverted: true
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+
+# GPIO9 is a boot strapping pin.
+# Holding the button during reset may prevent boot.
+
+# ================= OPTIONAL (REQUIRES JUMPERS) =================
+
+# ---- External Power Sense (GPIO5) ----
+# Requires hardware jumper to be CLOSED
+#
+#binary_sensor:
+#  - platform: gpio
+#    name: "External Power Present"
+#    pin:
+#      number: GPIO5
+#      mode: INPUT
+
+# ---- Battery Voltage (GPIO1 via divider) ----
+# Requires hardware jumper to be CLOSED
+# Divider: 470k / 470k → multiply by 2
+#
+#sensor:
+#  - platform: adc
+#    pin: GPIO1
+#    name: "Battery Voltage"
+#    attenuation: 12db
+#    update_interval: 10s
+#    filters:
+#      - multiply: 2.0
+
+# ================= UEXT =================
+
+uart:
+  - id: uext_uart
+    tx_pin: GPIO21
+    rx_pin: GPIO20
+    baud_rate: 115200
+
+i2c:
+  - id: uext_i2c
+    scl: GPIO3
+    sda: GPIO7
+    scan: true
+
+spi:
+  - id: uext_spi
+    clk_pin: GPIO6
+    mosi_pin: GPIO10
+    miso_pin: GPIO2
+
+# ================= NOTES =================
+#
+# GPIO1 (ADC) and GPIO5 are NOT available unless
+# corresponding board jumpers are populated.
+#
+# This config keeps default firmware safe for
+# out-of-the-box hardware state.
+#
+# Enable those sections only after closing jumpers.
+#
+# Avoid using GPIO4 (FSPIHD) unless you know exactly
+# what you're doing with SPI flash modes.
