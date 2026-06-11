@@ -8,6 +8,8 @@ Olimex ESP32-C3-DevKit-Lipo https://www.olimex.com/Products/IoT/ESP32-C3/ESP32-C
   push button - GPIO9	or Door magnetic switch https://www.olimex.com/Products/Components/Switches/MAG-SW/
   LED status  - GPIO8
   PIR sensor  - GPIO0	https://www.olimex.com/Products/Breadboarding/Sensors/PIR-SB312/
+
+  The project is described here: https://olimex.wordpress.com/2026/06/11/home-automation-with-phone-notifications-for-under-e5-yes-its-possible/
   
 */
 
