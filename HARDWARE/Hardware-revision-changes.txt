@@ -15,3 +15,9 @@ Major changes compared to revision B:
 3. Removed ESP-PROG connector.
 4. Rotated BAT1 connector.
 5. Changed some GPIOs - battery measruement pin is now GPIO5 and external power sense is GPIO1.
+
+========
+Hardware revision D
+========
+1. Reverted the change to the GPIOs responsible for battery sense and battery measurement. This is because ADC2 is used by the WIFI module.
+GPIO5 now used for external power sense and GPIO1 now used for battery measurement.
