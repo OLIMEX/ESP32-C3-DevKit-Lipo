@@ -19,5 +19,8 @@ Major changes compared to revision B:
 ========
 Hardware revision D
 ========
-1. Reverted the change to the GPIOs responsible for battery sense and battery measurement. This is because ADC2 is used by the WIFI module.
+
+Preliminary, unreleased.
+
+1. Reverted the change to the GPIOs responsible for battery sense and battery measurement. This is because ADC2 is used by the WIFI module and there might be confilct.
 GPIO5 now used for external power sense and GPIO1 now used for battery measurement.
